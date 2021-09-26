@@ -1,0 +1,33 @@
+
+type ItemDetailsResponse{
+  id : Int!
+  name : String!  
+  imageUrl : String!
+  nutrition : NutritionFact
+  user : UserDetails
+}
+
+type NutritionFact {
+  calories : Float
+  protein : Float
+  fat : Float
+}
+
+type UserDetails {
+  userId : Int!
+  name : String!
+  address : String!
+}
+
+type Process {
+  processId : Int!
+  heading : String!
+  content : String!
+  imageUrl : String
+}
+
+type Query{
+  GetItemDetails(id : Int!) : ItemDetailsResponse!
+  GetAllProcesses(id : Int!) : [Process!]! 
+  GetDetailedContent(processId : Int!) : String
+}
